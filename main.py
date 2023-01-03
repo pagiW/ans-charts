@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 from data import data
 import random
 
-getSeg = lambda segment, type: tuple([obj for obj in data if obj[type] == segment])
+getSeg = lambda segment, type: tuple(filter(lambda obj: obj[type] == segment, data))
 sects = tuple(set([obj['Segment Type'] for obj in data]))
 type = tuple(set([obj['Segment Description'] for obj in data]))
 
